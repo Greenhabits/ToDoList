@@ -5,8 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Todo</title>
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-        <link rel="stylesheet" href="/css/app.css">
+        <link href="{{ asset('css/style.css?20220703') }}" rel="stylesheet">
     </head>
     <body>
         <h1 class="title">
@@ -16,7 +15,7 @@
                 {{@csrf_field()}}
                 {{@method_field('DELETE')}}
                 <input type="submit" style="display:none">
-                <p class='delete'>[<button type="button" onclick="return deleteTodoList(this);">delete</button>]</p>
+                <p class='delete'><button type="button" onclick="return deleteTodoList(this);">delete</button></p>
             </form>
         <div class="content">
             <div class="content__to_do_lists">
@@ -24,7 +23,7 @@
                 <p>{{ $to_do_lists->body }}</p>    
             </div>
         </div>
-        
+         <a href="/categories/{{ $to_do_lists->category->id }}">{{ $to_do_lists->category->name }}</a>
         <div class="footer">
             <p class="edit">[<a href="/ToDoLists/{{ $to_do_lists->id }}/edit">edit</a>]</p>
             <a href="/">戻る</a>

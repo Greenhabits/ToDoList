@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\ToDoList;
 use App\Http\Requests\ToDoListRequest; 
+use App\Category;
 
 class ToDoListController extends Controller
 {
@@ -15,9 +16,9 @@ public function show(ToDoList $to_do_lists)
 {
     return view('ToDoLists/show')->with(['to_do_lists' => $to_do_lists]);
 }
-public function create()
+public function create(Category $category)
 {
-    return view('ToDoLists/create');
+    return view('ToDoLists/create')->with(['categories' => $category->get()]);;
 }
  public function store(ToDoList $to_do_lists, ToDoListRequest $request) // 引数をRequest->PostRequestにする
 {

@@ -1,4 +1,5 @@
 <!-- body内だけを表示しています。 -->
+<link href="{{ asset('css/style.css?20220703') }}" rel="stylesheet">
 <body>
     <h1 class="title">編集画面</h1>
     <div class="content">
