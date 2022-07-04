@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Routes;
 
 Route::get('/', 'ToDoListController@index');
 Route::get('/ToDoLists/create', 'ToDoListController@create');
-Route::get('/ToDoLists/{to_do_lists}/edit', 'ToDoListController@edit');
-Route::put('/ToDoLists/{to_do_lists}', 'ToDoListController@update');
-Route::delete('/ToDoLists/{to_do_lists}', 'ToDoListController@delete');
-Route::get('/ToDoLists/{to_do_lists}', 'ToDoListController@show');
+Route::get('/ToDoLists/{todolists}/edit', 'ToDoListController@edit');
+Route::put('/ToDoLists/{todolists}', 'ToDoListController@update');
+Route::delete('/ToDoLists/{todolists}', 'ToDoListController@delete');
+Route::get('/ToDoLists/{todolists}', 'ToDoListController@show');
 Route::post('/ToDoLists', 'ToDoListController@store');
 
