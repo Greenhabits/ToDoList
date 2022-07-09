@@ -7,10 +7,8 @@
         <meta charset="utf-8">
         <!-- Fonts -->
         <link href="{{ asset('css/style.css?20220703') }}" rel="stylesheet">
-        
     </head>
     <body>
-        {{Auth::user()->name}}
         <h1><font color=purple>Easy ToDo</font></h1>
         <a href='/ToDoLists/create'>create</a>
         <div class='ToDoLists'>

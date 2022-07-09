@@ -32,7 +32,7 @@ public function edit(ToDoList $to_do_lists)
 }
 public function update(ToDoListRequest $request, ToDoList $to_do_lists)
 {
-    $input_todolists = $request['to_do_lists'];
+    $input_to_do_lists = $request['to_do_lists'];
     $to_do_lists->fill($input_to_do_lists)->save();
 
     return redirect('/ToDoLists/' . $to_do_lists->id);
