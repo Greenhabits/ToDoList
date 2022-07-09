@@ -9,8 +9,8 @@ class ToDoListRequest extends FormRequest
     public function rules()
     {
         return [
-            'todolists.title' => 'required|string|max:100',
-            'todolists.body' => 'required|string|max:4000',
+            'to_do_lists.title' => 'required|string|max:100',
+            'to_do_lists.body' => 'required|string|max:4000',
         ];
     }
 }

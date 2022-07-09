@@ -11,17 +11,17 @@
             @csrf
             <div class="title">
                 <h2>Title</h2>
-                <input type="text" name="todolists[title]" placeholder="タイトル" value="{{ old('todolists.title') }}"/>
-                <p class="title__error" style="color:red">{{ $errors->first('todolists.title') }}</p>
+                <input type="text" name="to_do_lists[title]" placeholder="タイトル" value="{{ old('to_do_lists.title') }}"/>
+                <p class="title__error" style="color:red">{{ $errors->first('to_do_lists.title') }}</p>
             </div>
             <div class="body">
                 <h2>Body</h2>
-                <textarea name="todolists[body]" placeholder="今日も1日お疲れさまでした。">{{ old('todolists.body') }}</textarea>
-                <p class="body__error" style="color:red">{{ $errors->first('todolists.body') }}</p>
+                <textarea name="to_do_lists[body]" placeholder="今日も1日お疲れさまでした。">{{ old('to_do_lists.body') }}</textarea>
+                <p class="body__error" style="color:red">{{ $errors->first('to_do_lists.body') }}</p>
             </div>
             <div class="category">
             <h2>Category</h2>
-            <select name="todolists[category_id]">
+            <select name="to_do_lists[category_id]">
                 @foreach($categories as $category)
                     <option value="{{ $category->id }}">{{ $category->name }}</option>
                 @endforeach

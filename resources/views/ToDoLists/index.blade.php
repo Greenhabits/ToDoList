@@ -9,17 +9,17 @@
         <h1><font color=purple>Easy ToDo</font></h1>
         <a href='/ToDoLists/create'>create</a>
         <div class='ToDoLists'>
-            @foreach ($ToDoLists as $todolists)
-                <div class='todolists'>
+            @foreach ($to_do_lists as $to_do_list)
+                <div class='to_do_list'>
                     <h2 class='title'>
-    <a href="/ToDoLists/{{ $todolists->id }}">{{ $todolists->title }}</a></h2>
-                    <p class='body'>{{ $todolists->body }}</p> 
-                     <a href="/categories/{{ $todolists->category->id }}">{{ $todolists->category->name }}</a>
+    <a href="/ToDoLists/{{ $to_do_list->id }}">{{ $to_do_list->title }}</a></h2>
+                    <p class='body'>{{ $to_do_list->body }}</p> 
+                     <a href="/categories/{{ $to_do_list->category->id }}">{{ $to_do_list->category->name }}</a>
                 </div>
             @endforeach
         </div>
         <div class='paginate'>
-            {{ $ToDoLists->links() }}
+            {{ $to_do_lists->links() }}
         </div>
     </body>
 </html>

@@ -9,23 +9,23 @@
     </head>
     <body>
         <h1 class="title">
-            {{ $todolists->title }}
+            {{ $to_do_lists->title }}
         </h1>
-        <form action="/ToDoLists/{{ $todolists->id }}" id="form_delete" method="POST">
+        <form action="/ToDoLists/{{ $to_do_lists->id }}" id="form_delete" method="POST">
                 {{@csrf_field()}}
                 {{@method_field('DELETE')}}
                 <input type="submit" style="display:none">
                 <p class='delete'><button type="button" onclick="return deleteTodoList(this);">delete</button></p>
             </form>
         <div class="content">
-            <div class="content__todolists">
+            <div class="content__to_do_lists">
                 <h3>本文</h3>
-                <p>{{ $todolists->body }}</p>    
+                <p>{{ $to_do_lists->body }}</p>    
             </div>
         </div>
-         <a href="/categories/{{ $todolists->category->id }}">{{ $todolists->category->name }}</a>
+         <a href="/categories/{{ $to_do_lists->category->id }}">{{ $to_do_lists->category->name }}</a>
         <div class="footer">
-            <p class="edit">[<a href="/ToDoLists/{{ $todolists->id }}/edit">edit</a>]</p>
+            <p class="edit">[<a href="/ToDoLists/{{ $to_do_lists->id }}/edit">edit</a>]</p>
             <a href="/">戻る</a>
         </div>
         <script>

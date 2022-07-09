@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddCategoryIdToTodolistsTable extends Migration
+class AddCategoryIdToDoListsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class AddCategoryIdToTodolistsTable extends Migration
      */
     public function up()
     {
-        Schema::table('todolists', function (Blueprint $table) {
-            $table->integer('category_id')->unsigned();
+        Schema::table('to_do_lists', function (Blueprint $table) {
+        $table->integer('category_id')->unsigned();
         });
     }
 
@@ -25,7 +25,7 @@ class AddCategoryIdToTodolistsTable extends Migration
      */
     public function down()
     {
-        Schema::table('todolists', function (Blueprint $table) {
+        Schema::table('to_do_lists', function (Blueprint $table) {
             //
         });
     }

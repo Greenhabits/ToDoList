@@ -8,38 +8,38 @@ use App\Category;
 
 class ToDoListController extends Controller
 {
-   public function index(ToDoList $todolists)
+   public function index(ToDoList $to_do_lists)
 {
-    return view('ToDoLists/index')->with(['ToDoLists' => $todolists->getPaginateByLimit()]);
+    return view('ToDoLists/index')->with(['to_do_lists' => $to_do_lists->getPaginateByLimit()]);
 } 
-public function show(ToDoList $todolists)
+public function show(ToDoList $to_do_lists)
 {
-    return view('ToDoLists/show')->with(['todolists' => $todolists]);
+    return view('ToDoLists/show')->with(['to_do_lists' => $to_do_lists]);
 }
 public function create(Category $category)
 {
     return view('ToDoLists/create')->with(['categories' => $category->get()]);;
 }
- public function store(ToDoList $todolists, ToDoListRequest $request) // 引数をRequest->PostRequestにする
+ public function store(ToDoList $to_do_lists, ToDoListRequest $request) // 引数をRequest->PostRequestにする
 {
-        $input = $request['todolists'];
-        $todolists->fill($input)->save();
-        return redirect('/ToDoLists/' . $todolists->id);
+        $input = $request['to_do_lists'];
+        $to_do_lists->fill($input)->save();
+        return redirect('/ToDoLists/' . $to_do_lists->id);
 }
-public function edit(ToDoList $todolists)
+public function edit(ToDoList $to_do_lists)
 {
-    return view('ToDoLists/edit')->with(['todolists' => $todolists]);
+    return view('ToDoLists/edit')->with(['to_do_lists' => $to_do_lists]);
 }
-public function update(ToDoListRequest $request, ToDoList $todolists)
+public function update(ToDoListRequest $request, ToDoList $to_do_lists)
 {
-    $input_todolists = $request['todolists'];
-    $todolists->fill($input_todolists)->save();
+    $input_todolists = $request['to_do_lists'];
+    $to_do_lists->fill($input_to_do_lists)->save();
 
-    return redirect('/ToDoLists/' . $todolists->id);
+    return redirect('/ToDoLists/' . $to_do_lists->id);
 }
-public function delete(ToDoList $todolists)
+public function delete(ToDoList $to_do_lists)
 {
-    $todolists->delete();
+    $to_do_lists->delete();
     return redirect('/');
 }
 }
