@@ -37,6 +37,10 @@ public function update(ToDoListRequest $request, ToDoList $to_do_lists)
 
     return redirect('/ToDoLists/' . $to_do_lists->id);
 }
+ public function end(ToDoList $to_do_lists)
+{
+    return view('ToDoLists/end')->with(['to_do_lists' => $to_do_lists->getPaginateByLimit()]);
+} 
 public function delete(ToDoList $to_do_lists)
 {
     $to_do_lists->delete();

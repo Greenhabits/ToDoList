@@ -9,7 +9,6 @@
         <link href="{{ asset('css/style.css?20220703') }}" rel="stylesheet">
     </head>
     <body>
-        <h1><font color=purple>Easy ToDo</font></h1>
         <a href='/ToDoLists/create'>create</a>
         <div class='ToDoLists'>
             @foreach ($to_do_lists as $to_do_list)

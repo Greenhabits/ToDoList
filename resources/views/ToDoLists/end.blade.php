@@ -9,8 +9,7 @@
         <link href="{{ asset('css/style.css?20220703') }}" rel="stylesheet">
     </head>
     <body>
-        <a href='/ToDoLists/create'>create</a>
-        <a href='/ToDoLists/end'>終わった予定</a>
+        <a href='/ToDoLists/index'>Home</a>
         <div class='ToDoLists'>
             @foreach ($to_do_lists as $to_do_list)
                 <div class='to_do_list'>

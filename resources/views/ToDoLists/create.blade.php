@@ -9,7 +9,6 @@
        <link href="{{ asset('css/style.css?20220703') }}" rel="stylesheet">
     </head>
     <body>
-        <h1><font color=purple>Easy ToDo</font></h1>
         <form action="/ToDoLists" method="POST">
             @csrf
             <div class="title">

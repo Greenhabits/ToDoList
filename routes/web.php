@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Routes;
 Route::group(['middleware' => ['auth']], function(){
 Route::get('/', 'ToDoListController@index')->middleware('auth');
 Route::get('/ToDoLists/create', 'ToDoListController@create');
+Route::get('/ToDoLists/end', 'ToDoListController@end');
 Route::get('/ToDoLists/{to_do_lists}', 'ToDoListController@show');
 Route::get('/ToDoLists/{to_do_lists}/edit', 'ToDoListController@edit');
 Route::put('/ToDoLists/{to_do_lists}', 'ToDoListController@update');
