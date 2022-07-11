@@ -9,7 +9,7 @@
         <link href="{{ asset('css/style.css?20220703') }}" rel="stylesheet">
     </head>
     <body>
-        <a href='/ToDoLists/index'>Home</a>
+        <div class="back">[<a href="/">back</a>]</div>
         <div class='ToDoLists'>
             @foreach ($to_do_lists as $to_do_list)
                 <div class='to_do_list'>

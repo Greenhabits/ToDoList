@@ -17,6 +17,7 @@
                     <h2 class='title'>
     <a href="/ToDoLists/{{ $to_do_list->id }}">{{ $to_do_list->title }}</a></h2>
                     <p class='body'>{{ $to_do_list->body }}</p> 
+                    <a href="">{{ $to_do_list->month_id->month}}</a>
                      <a href="/categories/{{ $to_do_list->category->id }}">{{ $to_do_list->category->name }}</a>
                 </div>
             @endforeach

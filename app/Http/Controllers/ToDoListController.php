@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\ToDoList;
 use App\Http\Requests\ToDoListRequest; 
 use App\Category;
+use App\Month;
 
 class ToDoListController extends Controller
 {
@@ -16,9 +17,10 @@ public function show(ToDoList $to_do_lists)
 {
     return view('ToDoLists/show')->with(['to_do_lists' => $to_do_lists]);
 }
-public function create(Category $category)
+public function create(Category $category,Month $months)
 {
     return view('ToDoLists/create')->with(['categories' => $category->get()]);;
+    return view('ToDoList/create')->with(['months' => $months->get()]);;
 }
  public function store(ToDoList $to_do_lists, ToDoListRequest $request) // 引数をRequest->PostRequestにする
 {
@@ -41,6 +43,7 @@ public function update(ToDoListRequest $request, ToDoList $to_do_lists)
 {
     return view('ToDoLists/end')->with(['to_do_lists' => $to_do_lists->getPaginateByLimit()]);
 } 
+
 public function delete(ToDoList $to_do_lists)
 {
     $to_do_lists->delete();

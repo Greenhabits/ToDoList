@@ -12,7 +12,8 @@ class ToDoList extends Model
    protected $fillable = [
     'title',
     'body',
-    'category_id'
+    'category_id',
+    'month_id'
 ];
     function getPaginateByLimit(int $limit_count = 5)
 {
@@ -21,5 +22,9 @@ class ToDoList extends Model
 public function category()
 {
     return $this->belongsTo('App\Category');
+}
+public function month()
+{
+    return $this->belongsTo('App\Month');
 }
 }

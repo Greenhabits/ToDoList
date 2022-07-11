@@ -11,6 +11,7 @@
         <link href="{{ asset('css/style.css?20220703') }}" rel="stylesheet">
     </head>
     <body>
+        <a href="">{{ $to_do_list->month}}</a>
         <h1 class="title">
             {{ $to_do_lists->title }}
         </h1>

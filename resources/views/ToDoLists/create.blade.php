@@ -11,6 +11,14 @@
     <body>
         <form action="/ToDoLists" method="POST">
             @csrf
+            <div class="date">
+            <h2>Month</h2>
+            <select name="to_do_lists[month_id]">
+                @foreach($months as $month)
+                    <option>{{ $month->id }}</option>
+                @endforeach
+                </select>
+            </div>
             <div class="title">
                 <h2>Title</h2>
                 <input type="text" name="to_do_lists[title]" placeholder="タイトル" value="{{ old('to_do_lists.title') }}"/>
