@@ -23,8 +23,8 @@ public function category()
 {
     return $this->belongsTo('App\Category');
 }
-public function month()
+public function Dates()
 {
-    return $this->belongsTo('App\Month');
+    return $this->belongsTo('App\Date');
 }
 }

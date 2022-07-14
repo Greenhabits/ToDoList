@@ -17,10 +17,10 @@ public function show(ToDoList $to_do_lists)
 {
     return view('ToDoLists/show')->with(['to_do_lists' => $to_do_lists]);
 }
-public function create(Category $category,Month $months)
+public function create(Category $category,Date $dates)
 {
     return view('ToDoLists/create')->with(['categories' => $category->get()]);;
-    return view('ToDoList/create')->with(['months' => $months->get()]);;
+    return view('ToDoList/create')->with(['dates' => $date->get()]);;
 }
  public function store(ToDoList $to_do_lists, ToDoListRequest $request) // 引数をRequest->PostRequestにする
 {

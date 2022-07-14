@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMonthsTable extends Migration
+class CreateDatesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,11 @@ class CreateMonthsTable extends Migration
      */
     public function up()
     {
-        Schema::create('months', function (Blueprint $table) {
-            $table->Increments('month');
+        Schema::create('dates', function (Blueprint $table) {
+            $table->date('year');
+            $table->date('month');
+            $table->date('day');
+            $table->timestamps();
         });
     }
 
@@ -25,6 +28,6 @@ class CreateMonthsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('months');
+        Schema::dropIfExists('dates');
     }
 }

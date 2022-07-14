@@ -11,9 +11,8 @@
         <link href="{{ asset('css/style.css?20220703') }}" rel="stylesheet">
     </head>
     <body>
-        <a href="">{{ $to_do_list->month}}</a>
-        <h1 class="title">
-            {{ $to_do_lists->title }}
+        <h1 class="date">
+            {{ $to_do_lists->date_id }}
         </h1>
         <form action="/ToDoLists/{{ $to_do_lists->id }}" id="form_delete" method="POST">
                 {{@csrf_field()}}

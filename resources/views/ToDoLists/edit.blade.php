@@ -17,6 +17,10 @@
                 <h2>本文</h2>
                 <input type='text' name='to_do_lists[body]' value="{{ $to_do_lists->body }}">
             </div>
+                <h2>日付</h2> 
+                <div class='content__date_id'>
+                <input type='date' name='to_do_lists[date_id]' value="{{ $to_do_lists->date_id}}">
+            </div>
             <input type="submit" value="保存">
         </form>
     </div>

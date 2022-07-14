@@ -12,12 +12,9 @@
         <form action="/ToDoLists" method="POST">
             @csrf
             <div class="date">
-            <h2>Month</h2>
-            <select name="to_do_lists[month_id]">
-                @foreach($months as $month)
-                    <option>{{ $month->id }}</option>
-                @endforeach
-                </select>
+            <h2>Date</h2>
+            <input type="date" name="to_do_lists[date_id]" value="{{ old('to_do_lists.date_id') }}"/>
+                <p class="date_id__error" style="color:red">{{ $errors->first('to_do_lists.date_id') }}</p>
             </div>
             <div class="title">
                 <h2>Title</h2>
