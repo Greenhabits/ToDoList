@@ -17,13 +17,15 @@ public function show(ToDoList $to_do_lists)
 {
     return view('ToDoLists/show')->with(['to_do_lists' => $to_do_lists]);
 }
-public function create(Category $category,Date $dates)
+public function create(Category $category)
 {
     return view('ToDoLists/create')->with(['categories' => $category->get()]);;
-    return view('ToDoList/create')->with(['dates' => $date->get()]);;
 }
  public function store(ToDoList $to_do_lists, ToDoListRequest $request) // 引数をRequest->PostRequestにする
 {
+        $input = $request['to_do_lists'];
+        $to_do_lists->fill($input)->save();
+        return redirect('/ToDoLists/' . $to_do_lists->complete_id);    
         $input = $request['to_do_lists'];
         $to_do_lists->fill($input)->save();
         return redirect('/ToDoLists/' . $to_do_lists->id);

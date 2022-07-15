@@ -11,11 +11,6 @@
     <body>
         <form action="/ToDoLists" method="POST">
             @csrf
-            <div class="date">
-            <h2>Date</h2>
-            <input type="date" name="to_do_lists[date_id]" value="{{ old('to_do_lists.date_id') }}"/>
-                <p class="date_id__error" style="color:red">{{ $errors->first('to_do_lists.date_id') }}</p>
-            </div>
             <div class="title">
                 <h2>Title</h2>
                 <input type="text" name="to_do_lists[title]" placeholder="タイトル" value="{{ old('to_do_lists.title') }}"/>
@@ -33,7 +28,15 @@
                     <option value="{{ $category->id }}">{{ $category->name }}</option>
                 @endforeach
             </select>
-</div>
+        </div>
+         <div class="complete">
+        <h2>Complete</h2>
+            <select name="to_do_lists[complete_id]">
+                @foreach($completes as $complete)
+                    <option value="{{ $complete->id }}">{{ $complete->name }}</option>
+                @endforeach
+            </select>
+        </div>
             <input type="submit" value="保存"/>
         </form>
         <div class="back">[<a href="/">back</a>]</div>
