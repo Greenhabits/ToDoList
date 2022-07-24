@@ -19,13 +19,13 @@
     <a href="/ToDoLists/{{ $to_do_list->id }}">{{ $to_do_list->title }}</a></h2>
                     <p class='body'>{{ $to_do_list->body }}</p> 
                      <a href="/categories/{{ $to_do_list->category->id }}">{{ $to_do_list->category->name }}</a>
+                     <a href="">{{ $to_do_list->date_id }}</a>
                 </div>
                 <form action="/ToDoLists/{{ $to_do_list->id }}" id="form_{{ $to_do_list->id }}" method="post" style="display:inline">
                 @csrf
                 @method('DELETE')
                 <button type="submit">delete</button> 
             </form>
-            <button type="submit">完了</button> 
             @endforeach
         </div>
         <div class='paginate'>

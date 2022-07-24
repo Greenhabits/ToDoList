@@ -27,6 +27,7 @@
             </div>
         </div>
          <a href="/categories/{{ $to_do_lists->category->id }}">{{ $to_do_lists->category->name }}</a>
+          <a href="">{{ $to_do_lists->date_id }}</a>
         <div class="footer">
             <p class="edit">[<a href="/ToDoLists/{{ $to_do_lists->id }}/edit">edit</a>]</p>
             <a href="/">戻る</a>

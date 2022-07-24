@@ -18,6 +18,8 @@ Route::get('/ToDoLists/{to_do_lists}', 'ToDoListController@show');
 Route::get('/ToDoLists/{to_do_lists}/edit', 'ToDoListController@edit');
 Route::put('/ToDoLists/{to_do_lists}', 'ToDoListController@update');
 Route::get('/categories/{category}', 'CategoryController@index');
+Route::get('/dates/{date}', 'DateController@index');
+Route::get('/statuses/{status}', 'StatusController@index');
 Route::post('/ToDoLists', 'ToDoListController@store');
 Route::delete('/ToDoLists/{to_do_lists}', 'ToDoListController@delete');
 });

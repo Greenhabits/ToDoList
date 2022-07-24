@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddCompleteIdToToDoListsTable extends Migration
+class CreateDatesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,9 @@ class AddCompleteIdToToDoListsTable extends Migration
      */
     public function up()
     {
-        Schema::table('to_do_lists', function (Blueprint $table) {
-        $table->integer('complete_id')->unsigned();
+        Schema::create('dates', function (Blueprint $table) {
+           $table->dateTime('due_date');
+            $table->timestamps();
         });
     }
 
@@ -25,8 +26,6 @@ class AddCompleteIdToToDoListsTable extends Migration
      */
     public function down()
     {
-        Schema::table('to_do_lists', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('dates');
     }
 }

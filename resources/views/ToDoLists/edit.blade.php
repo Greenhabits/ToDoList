@@ -17,21 +17,9 @@
                 <h2>本文</h2>
                 <input type='text' name='to_do_lists[body]' value="{{ $to_do_lists->body }}">
             </div>
-        <div class="category">
-            <h2>Category</h2>
-            <select name="to_do_lists[category_id]">
-                @foreach($categories as $category)
-                    <option value="{{ $category->id }}">{{ $category->name }}</option>
-                @endforeach
-            </select>
-        </div>
-             <div class="complete">
-            <h2>Complete</h2>
-            <select name="to_do_lists[complete_id]">
-                @foreach($completes as $complete)
-                    <option value="{{ $complete->id }}">{{ $$complete->name }}</option>
-                @endforeach
-            </select>
+        <div class="date">
+            <h2>有効期限</h2> 
+             <input type="dateTime" name='to_do_lists[date_id]' value="0000-00-00 00:00:00"/>
         </div>
             <input type="submit" value="保存">
         </form>
