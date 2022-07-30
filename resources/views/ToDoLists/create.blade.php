@@ -34,6 +34,10 @@
                 <input type="dateTime" name="to_do_lists[date_id]"  value="0000-00-00 00:00:00" />
                 <p class="date__error" style="color:red">{{ $errors->first('to_do_lists.date_id') }}</p>
             </div>
+        <div class="status">
+        <h2>状態</h2>
+        <input type="number" name="to_do_lists[status_id]" value='$to_do_lists.status_id' min="1" max="3"/>
+    </div>
             <input type="submit" value="保存"/>
         </form>
         <div class="back">[<a href="/">back</a>]</div>

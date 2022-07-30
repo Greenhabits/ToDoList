@@ -11,9 +11,6 @@
         <link href="{{ asset('css/style.css?20220703') }}" rel="stylesheet">
     </head>
     <body>
-        <h1 class="date">
-            {{ $to_do_lists->date_id }}
-        </h1>
         <form action="/ToDoLists/{{ $to_do_lists->id }}" id="form_delete" method="POST">
                 {{@csrf_field()}}
                 {{@method_field('DELETE')}}
@@ -27,7 +24,8 @@
             </div>
         </div>
          <a href="/categories/{{ $to_do_lists->category->id }}">{{ $to_do_lists->category->name }}</a>
-          <a href="">{{ $to_do_lists->date_id }}</a>
+          <a href="">{{ $to_do_lists->date_id }}</a><br>
+            <a href="">{{ $to_do_lists->status_id}}</a>
         <div class="footer">
             <p class="edit">[<a href="/ToDoLists/{{ $to_do_lists->id }}/edit">edit</a>]</p>
             <a href="/">戻る</a>

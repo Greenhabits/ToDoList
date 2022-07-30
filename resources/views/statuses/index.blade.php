@@ -9,7 +9,9 @@
         <link href="{{ asset('css/style.css?20220703') }}" rel="stylesheet">
     </head>
     <body>
-        <a href="/">戻る</a>
+        <a href='/ToDoLists/create'>create</a>
+        <a href="/statuses/{{ $to_do_lists->status()->id }}">{{ $to_do_lists->status()->name }}</a>
+        <h1>優先事項</h1>
         <div class='ToDoLists'>
             @foreach ($to_do_lists as $to_do_list)
                 <div class='to_do_list'>

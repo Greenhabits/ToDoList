@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Status extends Model
 {
-public function ToDoLists()   
+   public function index(Status $status)
 {
-    return $this->hasMany('App\ToDoList');  
+ return view('statuses.index')->with(['to_do_lists' => $status->getByCategory()]);
 }
 }

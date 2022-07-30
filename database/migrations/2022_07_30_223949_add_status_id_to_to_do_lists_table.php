@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddStateToStatusesTable extends Migration
+class AddStatusIdToToDoListsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class AddStateToStatusesTable extends Migration
      */
     public function up()
     {
-        Schema::table('statuses', function (Blueprint $table) {
-        $table->char('name', 100);
+        Schema::table('to_do_lists', function (Blueprint $table) {
+        $table->integer('status_id')->unsigned(); 
         });
     }
 
@@ -25,7 +25,7 @@ class AddStateToStatusesTable extends Migration
      */
     public function down()
     {
-        Schema::table('statuses', function (Blueprint $table) {
+        Schema::table('to_do_lists', function (Blueprint $table) {
             //
         });
     }

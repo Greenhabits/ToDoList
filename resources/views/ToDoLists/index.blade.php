@@ -10,7 +10,7 @@
     </head>
     <body>
         <a href='/ToDoLists/create'>create</a>
-        <a href='/ToDoLists/end'>終わった予定</a>
+        <a href='/ToDoLists/end'>完了したもの</a>
         <h1>優先事項</h1>
         <div class='ToDoLists'>
             @foreach ($to_do_lists as $to_do_list)
@@ -20,6 +20,7 @@
                     <p class='body'>{{ $to_do_list->body }}</p> 
                      <a href="/categories/{{ $to_do_list->category->id }}">{{ $to_do_list->category->name }}</a>
                      <a href="">{{ $to_do_list->date_id }}</a>
+                     <a href="">{{ $to_do_list->status_id}}</a>
                 </div>
                 <form action="/ToDoLists/{{ $to_do_list->id }}" id="form_{{ $to_do_list->id }}" method="post" style="display:inline">
                 @csrf

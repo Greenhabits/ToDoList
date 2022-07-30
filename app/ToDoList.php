@@ -23,6 +23,7 @@ class ToDoList extends Model
 {
     return $this::with('category')->orderBy('updated_at', 'DESC')->paginate($limit_count);
     return $this::with('date')->orderBy('updated_at', 'DESC')->paginate($limit_count);
+    return $this::with('status')->orderBy('updated_at', 'DESC')->paginate($limit_count);
 }
 public function category()
 {
