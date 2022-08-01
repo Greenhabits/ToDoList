@@ -10,9 +10,10 @@ use App\Status;
 
 class ToDoListController extends Controller
 {
-   public function index(ToDoList $to_do_lists)
+   public function index(ToDoList $to_do_lists,Status $status)
 {
-    return view('ToDoLists/index')-> with(['to_do_lists' => $to_do_lists->getPaginateByLimit()]);
+    $to_do_lists= $to_do_lists->where('status_id','0')->paginate(5);
+    return view('ToDoLists/index')-> with(['to_do_lists' => $to_do_lists]);
 } 
 public function show(ToDoList $to_do_lists)
 {
@@ -38,14 +39,14 @@ public function update(ToDoListRequest $request, ToDoList $to_do_lists)
 {
     $input_to_do_lists = $request['to_do_lists'];
     $to_do_lists->fill($input_to_do_lists)->save();
-    $to_do_lists->status_id = $request->status_id = number('1');
 
     return redirect('/ToDoLists/' . $to_do_lists->id);
     return redirect('/ToDoLists/' . $to_do_lists->status_id);
 }
- public function end(ToDoList $to_do_lists)
+  public function end(ToDoList $to_do_lists,Status $status)
 {
-    return view('ToDoLists/end')->with(['to_do_lists' => $to_do_lists->getPaginateByLimit()]);
+    $to_do_lists= $to_do_lists->where('status_id','1')->paginate(5);
+   return view('ToDoLists/end')-> with(['to_do_lists' => $to_do_lists]);
 } 
 
 public function delete(ToDoList $to_do_lists)

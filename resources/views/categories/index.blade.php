@@ -20,7 +20,7 @@
                     <p class='body'>{{ $to_do_list->body }}</p> 
                      <a href="/categories/{{ $to_do_list->category->id }}">{{ $to_do_list->category->name }}</a>
                      <a href="">{{ $to_do_list->date_id }}</a>
-                     <a href="">{{ $to_do_list->status_id }}</a>
+                     <a href="">{{ $to_do_list->status->name }}</a>
                 </div>
                 <form action="/ToDoLists/{{ $to_do_list->id }}" id="form_{{ $to_do_list->id }}" method="post" style="display:inline">
                 @csrf

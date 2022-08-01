@@ -1,3 +1,6 @@
+<?php
+$date_id = new DateTime('2022-08-02 09:20:30');
+?>
 <!DOCTYPE HTML>
 @extends('layouts.app')　　　　　　　　　　　　　　　　　　
 
@@ -24,8 +27,8 @@
             </div>
         </div>
          <a href="/categories/{{ $to_do_lists->category->id }}">{{ $to_do_lists->category->name }}</a>
-          <a href="">{{ $to_do_lists->date_id }}</a><br>
-            <a href="">{{ $to_do_lists->status_id}}</a>
+          {{ $to_do_lists->date_id }}<br>
+            <a href="">{{ $to_do_lists->status->name }}</a>
         <div class="footer">
             <p class="edit">[<a href="/ToDoLists/{{ $to_do_lists->id }}/edit">edit</a>]</p>
             <a href="/">戻る</a>

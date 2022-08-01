@@ -1,3 +1,7 @@
+<?php
+$date_id = new DateTime('2022-08-02 09:20:30');
+?>
+
 <!DOCTYPE HTML>
 @extends('layouts.app')　　　　　　　　　　　　　　　　　　
 
@@ -31,12 +35,12 @@
         </div>
         <div class="date">
                 <h2>有効期限</h2>
-                <input type="dateTime" name="to_do_lists[date_id]"  value="0000-00-00 00:00:00" />
+             <input type="datetime-local" value="<?= $date_id->format('Y-m-d\TH:i:s') ?>" step="1">
                 <p class="date__error" style="color:red">{{ $errors->first('to_do_lists.date_id') }}</p>
             </div>
         <div class="status">
         <h2>状態</h2>
-        <input type="number" name="to_do_lists[status_id]" value='$to_do_lists.status_id' min="1" max="3"/>
+        <input type="number" name="to_do_lists[status_id]" value='$to_do_lists.status_id' min="0" max="1"/>
     </div>
             <input type="submit" value="保存"/>
         </form>

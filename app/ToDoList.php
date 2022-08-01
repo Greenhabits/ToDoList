@@ -19,10 +19,9 @@ class ToDoList extends Model
     protected $dates = [
         'date_id',
     ];
-    function getPaginateByLimit(int $limit_count = 5)
+ public function getPaginateByLimit(int $limit_count = 5)
 {
-    return $this::with('category')->orderBy('updated_at', 'DESC')->paginate($limit_count);
-    return $this::with('date')->orderBy('updated_at', 'DESC')->paginate($limit_count);
+    
     return $this::with('status')->orderBy('updated_at', 'DESC')->paginate($limit_count);
 }
 public function category()
